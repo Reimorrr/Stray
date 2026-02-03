@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>STRAY — Shop</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Explorá la colección completa de STRAY. Prendas seleccionadas, estética oscura contemporánea y drops limitados." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="STRAY — Shop" />
+  <meta property="og:description" content="Prendas seleccionadas. Estética oscura contemporánea. Drops limitados." />
+  <meta property="og:image" content="https://strayargentina.netlify.app/assets/og-image.jpg" />
+  <meta property="og:url" content="https://strayargentina.netlify.app/shop.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter (opcional pero suma) -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="shop.css">
+</head>
+
+
+<body>
+
+<header>
+  <!-- Menú hamburguesa -->
+  <div class="menu-icon" id="menuIcon">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Logo -->
+  <div class="title-3d">
+    <h1>STRAY</h1>
+  </div>
+</header>
+
+<!-- Menú lateral FUERA del header -->
+<nav class="menu" id="menu">
+  <div class="close-menu" id="closeMenu">&times;</div>
+
+  <ul>
+    <li><a href="#" class="category" data-category="all">Todos los productos</a></li>
+    <li><a href="#" class="category" data-category="top">Top</a></li>
+    <li><a href="#" class="category" data-category="bottom">Bottom</a></li>
+    <li><a href="#" class="category" data-category="accessories">Accesorios</a></li>
+  </ul>
+
+  <div class="instagram">
+    <a href="https://instagram.com/stray.ar" target="_blank" rel="noopener">
+      @STRAY
+    </a>
+  </div>
+</nav>
+
+<!-- Overlay -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+
+<!-- Overlay -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<main class="shop">
+  <section class="grid" id="catalog">
+    <!-- Productos cargados dinámicamente -->
+  </section>
+</main>
+
+<footer>
+  © STRAY — TODOS LOS DERECHOS RESERVADOS
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script src="shop.js"></script>
+
+</body>
+</html>

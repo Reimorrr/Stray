@@ -1,0 +1,130 @@
+/* ------------------- Base ------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* asegurar que ocupe toda la pantalla */
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ------------------- Header ------------------- */
+header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 40px;
+  border-bottom: 1px solid #111;
+}
+
+header .back {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+header .back:hover {
+  color: #fff;
+}
+
+/* ------------------- Main ------------------- */
+main.checkout {
+  flex: 1; /* ocupa todo el espacio restante */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* formulario al inicio */
+  padding: 40px 20px;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+select, input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #333;
+  background: #111;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+input::placeholder {
+  color: #777;
+}
+
+button#sendBtn {
+  padding: 12px 20px;
+  background: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: transform 0.2s;
+}
+
+button#sendBtn:hover {
+  transform: scale(1.03);
+}
+
+/* ------------------- Footer ------------------- */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #111;
+}
+
+/* Mantener el color gris en todos los estados del link Back */
+#backBtn {
+  color: #aaa;
+  text-decoration: none;
+}
+
+#backBtn:hover {
+  color: #fff;
+}
+
+#backBtn:focus,
+#backBtn:active {
+  color: #aaa;
+  outline: none; /* quitar el borde de focus si aparece */
+}
+/* CTA WhatsApp */
+button.cta {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px 0;
+  background: #fff;
+  color: #000;
+  border: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button.cta:hover {
+  background: #e5e5e5;
+  transform: scale(1.02);
+}
+
+button.cta:active {
+  transform: scale(0.98);
+}

@@ -1,0 +1,293 @@
+/* ------------------- Base ------------------- */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  /* Fondo con textura de ruido y color base */
+  background-color: #111; /* color base */
+  background-image: 
+    url('assets/noise.png'); /* textura de ruido */
+  background-repeat: repeat;
+  background-size: auto;
+  position: relative;
+}
+
+/* Overlay oscuro encima del body */
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.2); /* overlay oscuro, menos opaco para que la textura se note */
+  z-index: 0;
+}
+
+/* ------------------- Header ------------------- */
+header.header {
+  display: flex;
+  justify-content: space-between; /* separa back y logo */
+  align-items: center;
+  padding: 30px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(110, 110, 110, 0) 100%,
+    rgba(89, 89, 89, 0.25) 75%, 
+    rgba(17,17,17,0.5) 30%, 
+    rgba(17,17,17,0.75) 30%
+  );
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  transition: background 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* Botón volver a SHOP */
+header.header .back {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+header.header .back:hover,
+header.header .back:focus,
+header.header .back:active {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 15px rgba(255,255,255,0.3);
+}
+
+/* Logo STRAY a la derecha con glow */
+header.header .logo {
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+
+  color: #fff;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 3px #fff,
+    0 0 5px rgba(255,255,255,0.4),
+    0 0 10px rgba(255,255,255,0.3),
+    0 0 15px rgba(255,255,255,0.2);
+}
+
+
+
+/* ------------------- Product Layout ------------------- */
+.product {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+  position: relative;
+  z-index: 1; /* para que esté encima del overlay */
+}
+
+/* ------------------- Image Wrapper ------------------- */
+.image {
+  position: relative;
+  background: #111;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* ------------------- Slider ------------------- */
+.image-gallery {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #111;
+  border-radius: 4px;
+}
+
+.image-gallery .slides {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.image-gallery img {
+  min-width: 100%;
+  display: block;
+  object-fit: cover;
+  border: 1px solid #111;
+  transition: transform 0.6s ease;
+}
+
+.image-gallery img.second {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.image:hover img,
+.image:hover img.second {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* Flechas */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.arrow:hover {
+  background: rgba(255,255,255,0.85);
+  color: #000;
+}
+
+.arrow-left { left: 12px; }
+.arrow-right { right: 12px; }
+
+/* ------------------- Info ------------------- */
+.info {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+
+.info h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  text-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.price {
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  color: #aaa;
+  margin-bottom: 22px;
+}
+
+.description {
+  font-size: 0.85rem;
+  color: #777;
+  line-height: 1.9;
+  margin-bottom: 36px;
+  max-width: 420px;
+}
+
+/* ------------------- Sizes ------------------- */
+.sizes {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.sizes button {
+  background: transparent;
+  border: 1px solid #333;
+  color: #aaa;
+  padding: 8px 14px;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.sizes button:hover,
+.sizes button.active {
+  border-color: #fff;
+  color: #fff;
+  background: rgba(255,255,255,0.05);
+}
+
+/* ------------------- CTA ------------------- */
+.cta {
+  width: fit-content;
+  border: 1px solid #aaa !important; /* gris */
+  color: #aaa !important; /* gris */
+  padding: 14px 42px;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  background: transparent !important;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background: #fff !important;
+  color: #000 !important;
+  transform: scale(1.03);
+}
+
+/* ------------------- Animations ------------------- */
+@keyframes fadeInUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.size-error,
+.stock-error {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #777;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+}
+
+.size-error.visible,
+.stock-error.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ------------------- Stock Status ------------------- */
+.stock {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.stock.in { color: #aaa; }
+.stock.out { color: #555; }
+
+/* ------------------- Responsive ------------------- */
+@media (max-width: 900px) {
+  .product {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .info h2 { font-size: 1.5rem; }
+  .description { max-width: 100%; }
+}

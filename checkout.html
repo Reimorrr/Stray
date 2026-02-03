@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STRAY — Checkout</title>
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon.png">
+    <link rel="apple-touch-icon" href="/assets/favicon.png">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+<header>
+    <a href="#" id="backBtn">← BACK</a>
+  <h1>CHECKOUT</h1>
+</header>
+
+<main class="checkout">
+  <div class="form-container">
+    <label for="deliveryType">¿Desea envío a domicilio o retirar en sucursal?</label>
+    <select id="deliveryType">
+      <option value="" disabled selected>Seleccione...</option>
+      <option value="domicilio">Domicilio</option>
+      <option value="sucursal">Sucursal</option>
+    </select>
+
+    <form id="checkoutForm">
+      <!-- Campos dinámicos según tipo y botón enviar se generan desde JS -->
+    </form>
+
+  </div>
+</main>
+
+<footer>
+  © STRAY — TODOS LOS DERECHOS RESERVADOS
+</footer>
+
+<script src="checkout.js"></script>
+</body>
+</html>
